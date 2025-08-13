@@ -1,130 +1,149 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-html, body {
-    margin: 0;
-    height: 100%;
-    font-family: "Poppins", sans-serif;
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
 }
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0px 0px 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0px 0px 2px black;
 }
 header svg {
-    color: blueviolet;
-    font-size: 25px;
+  color: blueviolet;
+  font-size: 25px;
 }
 section.main-form {
-    padding: 50px 20px;
+  padding: 50px 20px;
 }
 section.main-form form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 section.main-form input {
-    width: 80vw;
-    height: 50px;
-    max-width: 720px;
-    padding: 0 20px;
-    font-size: 20px;
+  width: 80vw;
+  height: 50px;
+  max-width: 720px;
+  padding: 0 20px;
+  font-size: 20px;
 }
 section.main-form button {
-    width: 80px;
-    border: none;
-    font-size: 20px;
-    color: white;
-    background-color: blueviolet;
+  width: 80px;
+  border: none;
+  font-size: 20px;
+  color: white;
+  background-color: blueviolet;
 }
-section.tasks-container  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+section.tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 section.tasks-container div.task {
-    width: 60vw;
-    min-width: 350px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(219, 200, 237);
-    padding: 20px;
-    border-radius: 5px;
+  width: 62rem;
+  min-width: 350px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(219, 200, 237);
+  padding: 20px;
+  border-radius: 5px;
 }
-section.tasks-container div.done{ 
-    background-color: #4CAF50;
-    color: white;
-    position: relative;
+section.tasks-container div.done {
+  background-color: #4caf50;
+  color: white;
+  position: relative;
 }
 
-section.tasks-container div.done::before{ 
-    content: "✅";
-    width: 200px;
-    height: 100px;
-    position: absolute;
-    left: -25px;
-    top: 10px;
-
-} 
+section.tasks-container div.done::before {
+  content: "✅";
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  left: -25px;
+  top: 10px;
+}
 
 section.tasks-container .task span {
-    font-size: 20px;
-    text-wrap: nowrap;
-}
-@media (max-width: 1090px) {
-    section.tasks-container .task span {
-        font-size: 15px;
-        text-wrap: nowrap;
-
-}
-section.tasks-container div.task {
-    width: 60vw;
+  font-size: 20px;
+  flex-shrink: 3;
 }
 
-}
-@media (max-width: 600px) {
-section.main-form input {
-    width: 60vw;
-}
-
-    section.tasks-container .task span {
-        font-size: 15px;
-        text-wrap: wrap;
-
-}
-section.tasks-container div.task {
-    width: 40vw;
-    min-width: 300px;
-    height: fit-content;
-}
-section.tasks-container div.done::before {
-
-    top: 20px;
-}
-
-}
 section.tasks-container .task div {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 section.tasks-container .task div button {
-    border: none;
-    color: white;
+  border: none;
+  color: white;
 }
 section.tasks-container .task div button.done {
-    background-color: green;
-    padding: 5px 10px;
-    border-radius: 4px;
+  background-color: green;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+section.tasks-container .task div button.done:hover {
+  background-color: #4caf50;
 }
 section.tasks-container .task div button.delete {
-    background-color: rgb(217, 14, 14);
-    padding: 5px 10px;
-    border-radius: 4px;
+  background-color: rgb(217, 14, 14);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+section.tasks-container .task div button.delete:hover {
+  background-color: red;
 }
 
-
+@media (max-width: 1300px) {
+  section.tasks-container div.task {
+    flex-direction: column;
+    width: 40rem;
+  }
+  section.tasks-container div.task span {
+    font-size: 15px;
+  }
+  section.tasks-container div.done::before {
+    top: 25px;
+  }
+}
+@media (max-width: 670px) {
+  section.tasks-container div.task {
+    flex-direction: column;
+    width: 30rem;
+  }
+  section.tasks-container div.task span {
+    font-size: 13px;
+  }
+  section.tasks-container div.done::before {
+    top: 25px;
+  }
+}
+@media (max-width: 530px) {
+  section.main-form form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  section.main-form form button {
+    width: 80vw;
+    height: 50px;
+  }
+  section.tasks-container div.task {
+    flex-direction: column;
+    width: 15rem;
+  }
+  section.tasks-container div.task span {
+    font-size: 10px;
+  }
+  section.tasks-container div.done::before {
+    top: 25px;
+  }
+}
